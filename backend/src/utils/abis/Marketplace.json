@@ -1,0 +1,23 @@
+{
+  "abi": [
+    {
+      "type": "event",
+      "name": "ItemListed",
+      "inputs": [
+        {"name": "seller", "type": "address", "indexed": true},
+        {"name": "tokenId", "type": "uint256", "indexed": true},
+        {"name": "price", "type": "uint256", "indexed": false}
+      ]
+    },
+    {
+      "type": "event",
+      "name": "ItemSold",
+      "inputs": [
+        {"name": "seller", "type": "address", "indexed": true},
+        {"name": "buyer", "type": "address", "indexed": true},
+        {"name": "tokenId", "type": "uint256", "indexed": true},
+        {"name": "price", "type": "uint256", "indexed": false}
+      ]
+    }
+  ]
+}

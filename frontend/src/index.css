@@ -1,0 +1,333 @@
+/* CADEM Gaming Platform - Modern CSS Framework */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-600;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  body {
+    @apply bg-black text-white font-sans antialiased;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%, #0a0a0a 100%);
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Modern focus styles */
+  *:focus {
+    @apply outline-none ring-2 ring-blue-500/50 ring-offset-2 ring-offset-black;
+  }
+  
+  /* Enhanced text selection */
+  ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
+  
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Modern Button System */
+  .btn-primary {
+    @apply relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700
+           text-white font-medium py-3 px-6 rounded-lg transition-all duration-200
+           shadow-lg hover:shadow-xl active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .btn-secondary {
+    @apply relative bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/30
+           text-white font-medium py-3 px-6 rounded-lg transition-all duration-200
+           hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400
+           font-medium py-3 px-6 rounded-lg transition-all duration-200
+           hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-white/5 text-white/70 hover:text-white
+           font-medium py-2 px-4 rounded-lg transition-all duration-200
+           active:scale-95;
+  }
+  
+  /* Modern Card System */
+  .card {
+    @apply bg-white/3 backdrop-blur-sm border border-white/8 rounded-xl p-6 
+           hover:bg-white/5 hover:border-white/15 transition-all duration-200
+           shadow-lg hover:shadow-xl;
+  }
+  
+  .card-gaming {
+    @apply relative bg-white/3 backdrop-blur-sm border border-white/8 rounded-xl p-6 
+           hover:bg-white/5 hover:border-blue-500/20 transition-all duration-200
+           shadow-lg hover:shadow-xl;
+  }
+  
+  .card-premium {
+    @apply relative bg-gradient-to-br from-amber-500/10 to-orange-500/10 
+           backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 
+           hover:border-amber-400/30 transition-all duration-200
+           shadow-lg hover:shadow-xl;
+  }
+  
+  /* Modern Text Styles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold;
+  }
+  
+  .text-muted {
+    @apply text-white/60;
+  }
+  
+  .text-emphasis {
+    @apply text-white font-medium;
+  }
+  
+  /* Subtle Effects */
+  .glow-subtle {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+  
+  .glow-subtle:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Modern Input Styles */
+  .input-modern {
+    @apply bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder-white/40
+           focus:bg-white/8 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20
+           transition-all duration-200 hover:border-white/25;
+  }
+  
+  /* Modern Navigation */
+  .nav-link {
+    @apply relative px-4 py-2 rounded-lg text-white/70 hover:text-white transition-all duration-200
+           hover:bg-white/5 active:scale-95;
+  }
+  
+  .nav-link.active {
+    @apply text-white bg-blue-500/10 border border-blue-500/20;
+  }
+  
+  /* Loading States */
+  .loading-skeleton {
+    @apply bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-lg animate-pulse;
+  }
+  
+  /* Status Indicators */
+  .status-online {
+    @apply w-2 h-2 bg-green-400 rounded-full;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  }
+  
+  .status-offline {
+    @apply w-2 h-2 bg-red-400 rounded-full;
+  }
+  
+  /* Progress Bars */
+  .progress-bar {
+    @apply w-full bg-white/10 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300;
+  }
+  
+  /* Modern Badges */
+  .badge {
+    @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium;
+  }
+  
+  .badge-success {
+    @apply bg-green-500/15 text-green-400 border border-green-500/25;
+  }
+  
+  .badge-warning {
+    @apply bg-amber-500/15 text-amber-400 border border-amber-500/25;
+  }
+  
+  .badge-error {
+    @apply bg-red-500/15 text-red-400 border border-red-500/25;
+  }
+  
+  .badge-info {
+    @apply bg-blue-500/15 text-blue-400 border border-blue-500/25;
+  }
+}
+
+@layer utilities {
+  /* Modern Animation Utilities */
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  
+  /* Glass Morphism Effects */
+  .glass {
+    @apply bg-white/3 backdrop-blur-sm border border-white/8;
+  }
+  
+  .glass-strong {
+    @apply bg-white/5 backdrop-blur-md border border-white/15;
+  }
+  
+  /* Modern Utilities */
+  .border-accent {
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+  
+  .shadow-accent {
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  }
+  
+  .text-shadow {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Layout Utilities */
+  .container-gaming {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-spacing {
+    @apply py-12 lg:py-16;
+  }
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+/* Essential Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Modern Responsive Design */
+@media (max-width: 768px) {
+  .card, .card-gaming {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .container-gaming {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-gaming {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.75rem;
+  }
+  
+  .section-spacing {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-float,
+  .animate-fade-in,
+  .animate-slide-up {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card, .card-gaming {
+    border-width: 2px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    border-width: 2px;
+  }
+}

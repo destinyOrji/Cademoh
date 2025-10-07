@@ -1,0 +1,28 @@
+/* CADEM Gaming Platform - App Styles */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: inherit;
+}
+
+/* Remove default Vite styles that conflict with gaming theme */
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background: inherit;
+}
+
+/* Gaming-specific overrides */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure proper font rendering */
+body, #root {
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
